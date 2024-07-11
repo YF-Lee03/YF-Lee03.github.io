@@ -1,0 +1,9 @@
+# Fdb version 4
+["pdflatex"] 0 "f:/Notes/YF-Lee03.github.io/source/test.tex" "test.pdf" "test" 0 -1
+  "f:/Notes/YF-Lee03.github.io/source/test.tex" 0 -1 0 ""
+  "test.aux" 0 -1 0 "pdflatex"
+  (generated)
+  "test.aux"
+  "test.log"
+  "test.pdf"
+  (rewritten before read)
