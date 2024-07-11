@@ -1,0 +1,360 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?latexml searchpaths="F:\Notes\University_Notes_Undergraduate,F:\Notes\University_Notes_Undergraduate\Surf2024/Paper/"?>
+<?latexml class="article" options="a4paper"?>
+<?latexml package="graphicx"?>
+<?latexml package="hyperref"?>
+<?latexml package="amssymb"?>
+<?latexml package="amsmath"?>
+<?latexml package="amsthm"?>
+<?latexml package="geometry"?>
+<?latexml package="enumerate"?>
+<?latexml package="svg" options="inkscapeexe="D:/Inkscape/inkscape.com""?>
+<?latexml package="import"?>
+<?latexml package="float"?>
+<?latexml package="subcaption"?>
+<!--  %This is for plotting --><!--  %“usepackage–pgfplots˝ --><!--  %“pgfplotsset–compat=1.15˝ --><!--  %“usepackage–mathrsfs˝ --><!--  %“usetikzlibrary–arrows˝ --><!--  %页边距 --><!--  %**** header˙YL.tex Line 50 **** --><!--  %“documentclass[a4paper]–article˝ --><!--  %“title–˝ --><!--  %“input–header˙YL.tex˝ --><!--  %“begin–document˝ --><!--  %“maketitle --><!--  %“begin–center˝“begin–minipage˝[c]–0.9“textwidth˝“centering“footnotesize These is my personal solution to the exercises from the book “textit–Introduction to Commutative Algebra˝ by Atiyah and MacDonald. They are only one of the ways to look at the problems, and in particular, all errors are almost surely mine.“end–minipage˝“end–center˝ --><!--  %“tableofcontents --><!--  %“end–document˝ --><?latexml RelaxNGSchema="LaTeXML"?>
+<document xmlns="http://dlmf.nist.gov/LaTeXML" class="ltx_authors_1line">
+  <resource src="LaTeXML.css" type="text/css"/>
+  <resource src="ltx-article.css" type="text/css"/>
+  <title>The subcubic outerplanar graph is <Math mode="inline" tex="(1,1,2,2,2)" text="vector@(1, 1, 2, 2, 2)" xml:id="m1">
+      <XMath>
+        <XMDual>
+          <XMApp>
+            <XMTok meaning="vector"/>
+            <XMRef idref="m1.1"/>
+            <XMRef idref="m1.2"/>
+            <XMRef idref="m1.3"/>
+            <XMRef idref="m1.4"/>
+            <XMRef idref="m1.5"/>
+          </XMApp>
+          <XMWrap>
+            <XMTok role="OPEN" stretchy="false">(</XMTok>
+            <XMTok meaning="1" role="NUMBER" xml:id="m1.1">1</XMTok>
+            <XMTok role="PUNCT">,</XMTok>
+            <XMTok meaning="1" role="NUMBER" xml:id="m1.2">1</XMTok>
+            <XMTok role="PUNCT">,</XMTok>
+            <XMTok meaning="2" role="NUMBER" xml:id="m1.3">2</XMTok>
+            <XMTok role="PUNCT">,</XMTok>
+            <XMTok meaning="2" role="NUMBER" xml:id="m1.4">2</XMTok>
+            <XMTok role="PUNCT">,</XMTok>
+            <XMTok meaning="2" role="NUMBER" xml:id="m1.5">2</XMTok>
+            <XMTok role="CLOSE" stretchy="false">)</XMTok>
+          </XMWrap>
+        </XMDual>
+      </XMath>
+    </Math> -edge colorable</title>
+  <creator role="author">
+    <personname>Yifan Li</personname>
+  </creator>
+  <date role="creation"><!--  %Change your name! -->July 10, 2024<!--  %**** header˙YL.tex Line 75 **** --></date>
+  <para xml:id="p1">
+    <p align="center" class="ltx_minipage" vattach="middle" width="418.2pt"><text fontsize="80%">These is my personal proof to the conjecture that the subcubic outerplanar graph is <Math mode="inline" tex="(1,1,2,2,2)" text="vector@(1, 1, 2, 2, 2)" xml:id="m2">
+          <XMath>
+            <XMDual>
+              <XMApp>
+                <XMTok meaning="vector"/>
+                <XMRef idref="m2.1"/>
+                <XMRef idref="m2.2"/>
+                <XMRef idref="m2.3"/>
+                <XMRef idref="m2.4"/>
+                <XMRef idref="m2.5"/>
+              </XMApp>
+              <XMWrap>
+                <XMTok role="OPEN" stretchy="false">(</XMTok>
+                <XMTok meaning="1" role="NUMBER" xml:id="m2.1">1</XMTok>
+                <XMTok role="PUNCT">,</XMTok>
+                <XMTok meaning="1" role="NUMBER" xml:id="m2.2">1</XMTok>
+                <XMTok role="PUNCT">,</XMTok>
+                <XMTok meaning="2" role="NUMBER" xml:id="m2.3">2</XMTok>
+                <XMTok role="PUNCT">,</XMTok>
+                <XMTok meaning="2" role="NUMBER" xml:id="m2.4">2</XMTok>
+                <XMTok role="PUNCT">,</XMTok>
+                <XMTok meaning="2" role="NUMBER" xml:id="m2.5">2</XMTok>
+                <XMTok role="CLOSE" stretchy="false">)</XMTok>
+              </XMWrap>
+            </XMDual>
+          </XMath>
+        </Math> -edge colorable. They are only one of the ways to look at the problems, and in particular, all errors are almost surely mine.</text></p>
+  </para>
+  <TOC lists="toc" scope="global" select="ltx:part | ltx:chapter | ltx:section | ltx:subsection | ltx:subsubsection | ltx:appendix | ltx:index | ltx:bibliography">
+    <title>Contents</title>
+  </TOC>
+  <section inlist="toc" xml:id="S1">
+    <tags>
+      <tag>1</tag>
+      <tag role="autoref">section 1</tag>
+      <tag role="refnum">1</tag>
+      <tag role="typerefnum">§1</tag>
+    </tags>
+    <title><tag close=" ">1</tag>Introduction</title>
+    <theorem class="ltx_theorem_defi" inlist="thm theorem:defi" xml:id="Thmdefix1">
+      <tags>
+        <tag>Definition</tag>
+        <tag role="typerefnum">Definition</tag>
+      </tags>
+      <title class="ltx_runin"><tag><text font="bold">Definition</text></tag><text font="bold">.</text></title>
+      <para xml:id="Thmdefix1.p1">
+        <p>A graph is <text font="bold">outerplanar</text> if it can be embedded in the plane so that all vertices lie on the boundary of a single face.</p>
+      </para>
+    </theorem>
+    <theorem class="ltx_theorem_defi" inlist="thm theorem:defi" xml:id="Thmdefix2">
+      <tags>
+        <tag>Definition</tag>
+        <tag role="typerefnum">Definition</tag>
+      </tags>
+      <title class="ltx_runin"><tag><text font="bold">Definition</text></tag><text font="bold">.</text></title>
+      <para xml:id="Thmdefix2.p1">
+        <p>A graph is <text font="bold">subcubic</text> if all vertices have degree at most 3.</p>
+      </para>
+    </theorem>
+    <theorem class="ltx_theorem_defi" inlist="thm theorem:defi" xml:id="Thmdefix3">
+      <tags>
+        <tag>Definition</tag>
+        <tag role="typerefnum">Definition</tag>
+      </tags>
+      <title class="ltx_runin"><tag><text font="bold">Definition</text></tag><text font="bold">.</text></title>
+      <para xml:id="Thmdefix3.p1">
+        <p>A graph is <Math mode="inline" tex="(1,1,2,2,2)" text="vector@(1, 1, 2, 2, 2)" xml:id="Thmdefix3.p1.m1">
+            <XMath>
+              <XMDual>
+                <XMApp>
+                  <XMTok meaning="vector"/>
+                  <XMRef idref="Thmdefix3.p1.m1.1"/>
+                  <XMRef idref="Thmdefix3.p1.m1.2"/>
+                  <XMRef idref="Thmdefix3.p1.m1.3"/>
+                  <XMRef idref="Thmdefix3.p1.m1.4"/>
+                  <XMRef idref="Thmdefix3.p1.m1.5"/>
+                </XMApp>
+                <XMWrap>
+                  <XMTok role="OPEN" stretchy="false">(</XMTok>
+                  <XMTok meaning="1" role="NUMBER" xml:id="Thmdefix3.p1.m1.1">1</XMTok>
+                  <XMTok role="PUNCT">,</XMTok>
+                  <XMTok meaning="1" role="NUMBER" xml:id="Thmdefix3.p1.m1.2">1</XMTok>
+                  <XMTok role="PUNCT">,</XMTok>
+                  <XMTok meaning="2" role="NUMBER" xml:id="Thmdefix3.p1.m1.3">2</XMTok>
+                  <XMTok role="PUNCT">,</XMTok>
+                  <XMTok meaning="2" role="NUMBER" xml:id="Thmdefix3.p1.m1.4">2</XMTok>
+                  <XMTok role="PUNCT">,</XMTok>
+                  <XMTok meaning="2" role="NUMBER" xml:id="Thmdefix3.p1.m1.5">2</XMTok>
+                  <XMTok role="CLOSE" stretchy="false">)</XMTok>
+                </XMWrap>
+              </XMDual>
+            </XMath>
+          </Math><text font="bold"> -edge colorable</text> if its edges can be colored with 5 colors such that each vertex is incident with exactly one edge of each color. In addition, the edges with colors being one of 3, 4, 5 could not seen by one edge.</p>
+      </para>
+    </theorem>
+    <theorem class="ltx_theorem_defi" inlist="thm theorem:defi" xml:id="Thmdefix4">
+      <tags>
+        <tag>Definition</tag>
+        <tag role="typerefnum">Definition</tag>
+      </tags>
+      <title class="ltx_runin"><tag><text font="bold">Definition</text></tag><text font="bold">.</text></title>
+      <para xml:id="Thmdefix4.p1">
+        <p>A cut vertex is a vertex whose removal disconnects the graph.</p>
+      </para>
+    </theorem>
+    <theorem class="ltx_theorem_defi" inlist="thm theorem:defi" xml:id="Thmdefix5">
+      <tags>
+        <tag>Definition</tag>
+        <tag role="typerefnum">Definition</tag>
+      </tags>
+      <title class="ltx_runin"><tag><text font="bold">Definition</text></tag><text font="bold">.</text></title>
+      <para xml:id="Thmdefix5.p1">
+        <p>A graph is <text font="bold">2-connected</text> if it is connected and has no cut vertex.</p>
+      </para>
+    </theorem>
+    <theorem class="ltx_theorem_defi" inlist="thm theorem:defi" xml:id="Thmdefix6">
+      <tags>
+        <tag>Definition</tag>
+        <tag role="typerefnum">Definition</tag>
+      </tags>
+      <title class="ltx_runin"><tag><text font="bold">Definition</text></tag><text font="bold">.</text></title>
+      <para xml:id="Thmdefix6.p1">
+        <p>The face of a graph is a maximal connected subgraph that is homeomorphic to an open disk. In addition, a 2-connected face is a face that has no cut vertex.</p>
+      </para>
+    </theorem>
+<!--  %**** Surf2024.tex Line 25 **** -->    <theorem class="ltx_theorem_defi" inlist="thm theorem:defi" xml:id="Thmdefix7">
+      <tags>
+        <tag>Definition</tag>
+        <tag role="typerefnum">Definition</tag>
+      </tags>
+      <title class="ltx_runin"><tag><text font="bold">Definition</text></tag><text font="bold">.</text></title>
+      <para xml:id="Thmdefix7.p1">
+        <p>The face graph of a graph is a graph whose vertices are the faces of the graph and vertices are adjacent if they share an edge. Note that in this paper we do not consider the outer face without particular mention.</p>
+      </para>
+    </theorem>
+    <theorem class="ltx_theorem_conjecture" inlist="thm theorem:conjecture" xml:id="Thmconjecturex1">
+      <tags>
+        <tag>Conjecture</tag>
+        <tag role="typerefnum">Conjecture</tag>
+      </tags>
+      <title class="ltx_runin"><tag><text font="bold">Conjecture</text></tag><text font="bold">.</text></title>
+      <para xml:id="Thmconjecturex1.p1">
+        <p>The subcubic outerplanar graph is <Math mode="inline" tex="(1,1,2,2,2)" text="vector@(1, 1, 2, 2, 2)" xml:id="Thmconjecturex1.p1.m1">
+            <XMath>
+              <XMDual>
+                <XMApp>
+                  <XMTok meaning="vector"/>
+                  <XMRef idref="Thmconjecturex1.p1.m1.1"/>
+                  <XMRef idref="Thmconjecturex1.p1.m1.2"/>
+                  <XMRef idref="Thmconjecturex1.p1.m1.3"/>
+                  <XMRef idref="Thmconjecturex1.p1.m1.4"/>
+                  <XMRef idref="Thmconjecturex1.p1.m1.5"/>
+                </XMApp>
+                <XMWrap>
+                  <XMTok role="OPEN" stretchy="false">(</XMTok>
+                  <XMTok meaning="1" role="NUMBER" xml:id="Thmconjecturex1.p1.m1.1">1</XMTok>
+                  <XMTok role="PUNCT">,</XMTok>
+                  <XMTok meaning="1" role="NUMBER" xml:id="Thmconjecturex1.p1.m1.2">1</XMTok>
+                  <XMTok role="PUNCT">,</XMTok>
+                  <XMTok meaning="2" role="NUMBER" xml:id="Thmconjecturex1.p1.m1.3">2</XMTok>
+                  <XMTok role="PUNCT">,</XMTok>
+                  <XMTok meaning="2" role="NUMBER" xml:id="Thmconjecturex1.p1.m1.4">2</XMTok>
+                  <XMTok role="PUNCT">,</XMTok>
+                  <XMTok meaning="2" role="NUMBER" xml:id="Thmconjecturex1.p1.m1.5">2</XMTok>
+                  <XMTok role="CLOSE" stretchy="false">)</XMTok>
+                </XMWrap>
+              </XMDual>
+            </XMath>
+          </Math> -edge colorable.</p>
+      </para>
+    </theorem>
+  </section>
+  <section inlist="toc" xml:id="S2">
+    <tags>
+      <tag>2</tag>
+      <tag role="autoref">section 2</tag>
+      <tag role="refnum">2</tag>
+      <tag role="typerefnum">§2</tag>
+    </tags>
+    <title><tag close=" ">2</tag>Proof</title>
+    <theorem class="ltx_theorem_lemma" inlist="thm theorem:lemma" xml:id="Thmlemmax1">
+      <tags>
+        <tag>Lemma</tag>
+        <tag role="typerefnum">Lemma</tag>
+      </tags>
+      <title class="ltx_runin"><tag><text font="bold">Lemma</text></tag><text font="bold">.</text></title>
+      <para xml:id="Thmlemmax1.p1">
+        <p>The 2-connected subcubic outerplanar graph is <Math mode="inline" tex="(1,1,2,2,2)" text="vector@(1, 1, 2, 2, 2)" xml:id="Thmlemmax1.p1.m1">
+            <XMath>
+              <XMDual>
+                <XMApp>
+                  <XMTok meaning="vector"/>
+                  <XMRef idref="Thmlemmax1.p1.m1.1"/>
+                  <XMRef idref="Thmlemmax1.p1.m1.2"/>
+                  <XMRef idref="Thmlemmax1.p1.m1.3"/>
+                  <XMRef idref="Thmlemmax1.p1.m1.4"/>
+                  <XMRef idref="Thmlemmax1.p1.m1.5"/>
+                </XMApp>
+                <XMWrap>
+                  <XMTok role="OPEN" stretchy="false">(</XMTok>
+                  <XMTok meaning="1" role="NUMBER" xml:id="Thmlemmax1.p1.m1.1">1</XMTok>
+                  <XMTok role="PUNCT">,</XMTok>
+                  <XMTok meaning="1" role="NUMBER" xml:id="Thmlemmax1.p1.m1.2">1</XMTok>
+                  <XMTok role="PUNCT">,</XMTok>
+                  <XMTok meaning="2" role="NUMBER" xml:id="Thmlemmax1.p1.m1.3">2</XMTok>
+                  <XMTok role="PUNCT">,</XMTok>
+                  <XMTok meaning="2" role="NUMBER" xml:id="Thmlemmax1.p1.m1.4">2</XMTok>
+                  <XMTok role="PUNCT">,</XMTok>
+                  <XMTok meaning="2" role="NUMBER" xml:id="Thmlemmax1.p1.m1.5">2</XMTok>
+                  <XMTok role="CLOSE" stretchy="false">)</XMTok>
+                </XMWrap>
+              </XMDual>
+            </XMath>
+          </Math> -edge colorable.</p>
+      </para>
+    </theorem>
+    <proof>
+      <title class="ltx_runin" font="italic">Proof.</title>
+      <para xml:id="S2.p1">
+        <p>Suppose not, there would be a counterexample. Let <Math mode="inline" tex="G" text="G" xml:id="S2.p1.m1">
+            <XMath>
+              <XMTok font="italic" role="UNKNOWN">G</XMTok>
+            </XMath>
+          </Math> be a counterexample with the smallest number of vertices. Since the graph is outerplanar, the face graph is a tree. Consider the face <Math mode="inline" tex="F_{0}" text="F _ 0" xml:id="S2.p1.m2">
+            <XMath>
+              <XMApp>
+                <XMTok role="SUBSCRIPTOP" scriptpos="post1"/>
+                <XMTok font="italic" role="UNKNOWN">F</XMTok>
+                <XMTok fontsize="70%" meaning="0" role="NUMBER">0</XMTok>
+              </XMApp>
+            </XMath>
+          </Math> corresponding to the leaf of the longest path of the face graph. Removing <Math mode="inline" tex="F_{0}" text="F _ 0" xml:id="S2.p1.m3">
+            <XMath>
+              <XMApp>
+                <XMTok role="SUBSCRIPTOP" scriptpos="post1"/>
+                <XMTok font="italic" role="UNKNOWN">F</XMTok>
+                <XMTok fontsize="70%" meaning="0" role="NUMBER">0</XMTok>
+              </XMApp>
+            </XMath>
+          </Math>, the left graph is still outerplanar, denoted by <Math mode="inline" tex="G^{\prime}" text="G ^ prime" xml:id="S2.p1.m4">
+            <XMath>
+              <XMApp>
+                <XMTok role="SUPERSCRIPTOP" scriptpos="post1"/>
+                <XMTok font="italic" role="UNKNOWN">G</XMTok>
+                <XMTok fontsize="70%" name="prime" role="SUPOP">′</XMTok>
+              </XMApp>
+            </XMath>
+          </Math>. By the minimality of <Math mode="inline" tex="G" text="G" xml:id="S2.p1.m5">
+            <XMath>
+              <XMTok font="italic" role="UNKNOWN">G</XMTok>
+            </XMath>
+          </Math>, <Math mode="inline" tex="G^{\prime}" text="G ^ prime" xml:id="S2.p1.m6">
+            <XMath>
+              <XMApp>
+                <XMTok role="SUPERSCRIPTOP" scriptpos="post1"/>
+                <XMTok font="italic" role="UNKNOWN">G</XMTok>
+                <XMTok fontsize="70%" name="prime" role="SUPOP">′</XMTok>
+              </XMApp>
+            </XMath>
+          </Math> is <Math mode="inline" tex="(1,1,2,2,2)" text="vector@(1, 1, 2, 2, 2)" xml:id="S2.p1.m7">
+            <XMath>
+              <XMDual>
+                <XMApp>
+                  <XMTok meaning="vector"/>
+                  <XMRef idref="S2.p1.m7.1"/>
+                  <XMRef idref="S2.p1.m7.2"/>
+                  <XMRef idref="S2.p1.m7.3"/>
+                  <XMRef idref="S2.p1.m7.4"/>
+                  <XMRef idref="S2.p1.m7.5"/>
+                </XMApp>
+                <XMWrap>
+                  <XMTok role="OPEN" stretchy="false">(</XMTok>
+                  <XMTok meaning="1" role="NUMBER" xml:id="S2.p1.m7.1">1</XMTok>
+                  <XMTok role="PUNCT">,</XMTok>
+                  <XMTok meaning="1" role="NUMBER" xml:id="S2.p1.m7.2">1</XMTok>
+                  <XMTok role="PUNCT">,</XMTok>
+                  <XMTok meaning="2" role="NUMBER" xml:id="S2.p1.m7.3">2</XMTok>
+                  <XMTok role="PUNCT">,</XMTok>
+                  <XMTok meaning="2" role="NUMBER" xml:id="S2.p1.m7.4">2</XMTok>
+                  <XMTok role="PUNCT">,</XMTok>
+                  <XMTok meaning="2" role="NUMBER" xml:id="S2.p1.m7.5">2</XMTok>
+                  <XMTok role="CLOSE" stretchy="false">)</XMTok>
+                </XMWrap>
+              </XMDual>
+            </XMath>
+          </Math> -edge colorable. Now we consider the situation of <Math mode="inline" tex="F_{0}" text="F _ 0" xml:id="S2.p1.m8">
+            <XMath>
+              <XMApp>
+                <XMTok role="SUBSCRIPTOP" scriptpos="post1"/>
+                <XMTok font="italic" role="UNKNOWN">F</XMTok>
+                <XMTok fontsize="70%" meaning="0" role="NUMBER">0</XMTok>
+              </XMApp>
+            </XMath>
+          </Math>. Since <Math mode="inline" tex="F_{0}" text="F _ 0" xml:id="S2.p1.m9">
+            <XMath>
+              <XMApp>
+                <XMTok role="SUBSCRIPTOP" scriptpos="post1"/>
+                <XMTok font="italic" role="UNKNOWN">F</XMTok>
+                <XMTok fontsize="70%" meaning="0" role="NUMBER">0</XMTok>
+              </XMApp>
+            </XMath>
+          </Math><!--  %“begin–figure˝[H] --> is a leaf, it would be as the following:
+∎<!--  %“centering 
+     %“includegraphics[width=0.5“textwidth]–fig1.png˝ 
+     %“caption–The face $F˙0$˝ 
+     %“end–figure˝ --></p>
+      </para>
+    </proof>
+  </section>
+</document>
