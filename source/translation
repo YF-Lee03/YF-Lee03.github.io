@@ -1,1 +1,0 @@
-pandoc source/test.tex -f latex -t markdown -s -o source/test1.md
