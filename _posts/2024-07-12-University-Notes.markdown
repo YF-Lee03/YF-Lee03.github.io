@@ -53,7 +53,7 @@ Complex Analysis (2023, J. Xu)
 
 Ordinary Differential Equations and Control (2023, Z. Wu)
 
-[Some Interesting Properties in System of Linear First-order ODE](./source/ODE.pdf)
+[Some Interesting Properties in System of Linear First-order ODE](../source/ODE.pdf)
 
 Discrete Mathematics (2023, Aistis)
 
