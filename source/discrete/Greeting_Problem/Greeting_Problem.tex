@@ -1,0 +1,42 @@
+\documentclass{article}
+\usepackage{graphicx} % Required for inserting images
+\usepackage{hyperref}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{geometry}
+\usepackage{enumerate}
+\newtheorem{lemma}{Lemma}
+\newtheorem{method}{Method}
+\newtheorem{definition}{Definition}
+\newtheorem{theorem}{\bf Theorem}
+\newtheorem{proposition}{\bf Proposition}
+\newtheorem{example}{Example}
+\newtheorem{sol}{Solution}
+\newtheorem{corollary}{Corollary}
+
+
+\title{\vspace{-2cm} Greeting Problem}
+\author{Yifan Li}
+\date{\today}
+
+\begin{document}
+
+\maketitle
+
+During Chinese New Year each of the 45 Discrete Mathematics student sent a greeting to
+exactly one other Discrete Mathematics student (each student sent one, but could have have
+received more than one greeting). Prove that after the greetings were sent, there were a group
+of 15 Discrete Mathematics students, none of which greeted each other (yet).
+
+\begin{proof}
+    Since each student should greet exactly one other student, thus the graph has 45 vertices and 45 edges. In addition, consider each connected component of the graph, if the order of one of the component is $m$, then the size of it is also $m$. Thus we can regard the connected component to be a tree adding an edge (since it is connected, there exists a spanning tree and the size is $m-1$). In such component, we first consider its spanning tree. Since there is no cycle, it is a bipartite. Thus we may find two independent sets, one of whose has order at least $\lceil\frac{m}{2}\rceil$. Adding one edge, the order would be at least $\frac{m+1}{2}-1$ for $m$ being odd and $\frac{m}{2}$ for $m$ being even (There are two cases for $m$ being even: the spanning tree is $K_{\frac{m}{2},\,\frac{m}{2}}$ or one of the independent set of spanning tree has order larger than $\frac{m}{2}$, and for each case adding one edge we would still have an independent set with order at least $\frac{m}{2}$).
+
+    For the total graph, it has connected component $G_1,\,G_2,\,\ldots,\,G_n$, their order are $m_1,\,m_2,\,\ldots,\,m_n$, correspondingly. For each component, one may find at least $\lceil\frac{m}{2}\rceil-1$ independent vertices. Thus the total order of independent size is at least 
+    \begin{equation*}
+        \sum_{k=1}^{n}{\min\{\frac{m_{k+1}}{2}-1,\,\frac{m_k}{2}\}}=\sum_{k=1}^{n}{\frac{m-1}{2}}=\frac{45-15}{2}=15.
+    \end{equation*}
+\end{proof}
+
+
+\end{document}

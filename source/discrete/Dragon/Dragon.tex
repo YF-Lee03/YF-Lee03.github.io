@@ -1,0 +1,57 @@
+\documentclass{article}
+\usepackage{graphicx} % Required for inserting images
+\usepackage{hyperref}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{geometry}
+\usepackage{enumerate}
+\usepackage{quiver}
+\newtheorem{lemma}{Lemma}
+\newtheorem{method}{Method}
+\newtheorem{definition}{\bf Definition}
+\newtheorem{theorem}{\bf Theorem}
+\newtheorem{proposition}{\bf Proposition}
+\newtheorem{example}{Example}
+\newtheorem{sol}{Solution}
+\newtheorem{corollary}{Corollary}
+
+
+\title{\vspace{-2cm} Dragon Problem}
+\author{Yifan Li}
+\date{\today}
+
+\begin{document}
+\maketitle
+The dragon of luck time-travels bringing happiness and prosperity to the year he visits. To jump between the years, he only uses two bi-directional transits $N \leftrightarrow 3N +1$ or $N \leftrightarrow 2N$. Prove that there is a sequence of transits that the dragon can use to come to visit us in 2024, no matter which year he is currently in. (Here we only consider the positive integer)
+
+\begin{definition}
+    \begin{equation*}
+        \begin{split}
+            &T_1:\ \mathbb{Z}^+\rightarrow\mathbb{Z}^+,\ T_1(n)=2n,\\
+            &T_2:\ \mathbb{Z}^+\rightarrow\mathbb{Z}^+,\ T_2(n)=3n+1,\\
+            &\mathcal{T}=\{T_1,\ T_2\},\\
+            &T_3:\ \mathbb{Z}^+\rightarrow\mathbb{Z}^+,\ T_3(n)=2n+1,\\
+        \end{split}
+    \end{equation*}
+\end{definition}
+
+To prove that the dragon can jump to 2024 from any year, we prove the following proposition.
+
+\begin{proposition}
+    For $\forall m,\,n \in \mathbb{Z}^+$, there exists a combination $T$ of $T_1$, $T_1^{-1}$, $T_2$ and $T_2^{-1}$ such that $T(m)=n$.
+\end{proposition}
+\begin{proof}
+    To show that an arbitrary positive integer can be transfered to any positive integer, we can show that any positive integer can be transfered to $1$ since the operation we use is in the free group $F_{\mathcal{T}}$ and the inverse of operation is still in $F_{\mathcal{T}}$.\\
+    For an even number, we may apply $T_1^{-1}$ to transit it into an odd number. Then we only need to consider the situation of odd number. For an odd number $a$, it has the form $a=2b+1$ for some $b\in\mathbb{N}$. In this case, we have $a=T_3(b)$, if $b$ is still an odd number, we can apply $T_3^{-1}$ again and finally get an even natural number.\\
+    We separate the situation into two cases: $0$ and positive even integer $2k$. For the situation of $0$, we may write $a$ as $T_3\circ\ldots\circ T_3(0)=2(2(\ldots(2(0)+1)\ldots)+1)+1=1+2+4+\ldots+2^n$ for some $n\in\mathbb{N}$. For the situation of positive even integer $2k$, we may write $a$ as $T_3\circ\ldots\circ T_3(2k)=2(2(\ldots(2(2k)+1)\ldots)+1)+1=2^{n+2}k+1+2+4+\ldots+2^n$ for some $n\in\mathbb{Z}^+$.\\
+    \begin{itemize}
+        \item $T_3\circ\ldots\circ T_3(0)$. For $a=1+2+4+\ldots+2^n=2^{n+1}-1$. Applying $T_1^{-1}\circ T_2$ for $n+1$ times, we can get $\frac{3^{n+1}-1}{2}=1+3+9+\ldots+3^{n}$. Notice that $T_2^{-1}(\frac{3^{n+1}-1}{2})=T_2^{-1}(1+3+\ldots+3^{n})=1+3+\ldots+3^{n-1}$. Thus applying $T_2^{-1}$ for $n$ times, we would get $1$.
+        \item $T_3\circ\ldots\circ T_3(2k)$. For $a=2^{n+2}k+1+2+4+\ldots+2^n=2^{n+2}k+2^{n+1}-1$. Applying $T_1^{-1}\circ T_2$ for $n+1$ times, we can get $3^{n+1}(2k+1)-1$. Applying $T_1^{-1}$, we have $3^{n+1}k+\frac{3^{n+1}-1}{2}=3^{n+1}k+1+3+\ldots+3^n$. Notice that $T_2^{-1}(3^{n+1}k+1+3+\ldots+3^n)=3^nk+1+3+\ldots+3^{n-1}$. Thus applying $T_2^{-1}$ for $n$ times, we would get $k+1$, which is smaller than $a$. Repeat the previous steps and we can finally reduce to $1$.
+    \end{itemize}
+\end{proof}
+
+
+
+
+\end{document}

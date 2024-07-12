@@ -1,0 +1,248 @@
+\documentclass{article}
+\usepackage{graphicx} % Required for inserting images
+\usepackage{hyperref}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\newtheorem{lemma}{Lemma}[section]
+\newtheorem{method}{Method}[section]
+\newtheorem{definition}{Definition}[section]
+\newtheorem{theorem}{\bf Theorem}[section]
+\newtheorem{prop}{\bf Proposition}[section]
+\newtheorem{example}{Example}[section]
+\title{Discrete Mathematics}
+\author{Yifan Li}
+\date{\today}
+
+\begin{document}
+
+\maketitle
+
+\section{Basic Knowledge}
+\subsection{Factorial}
+\begin{prop}
+    A fact for factorial
+    \begin{equation}\label{eq1}
+        \sum_{k=0}^nk\cdot k!=(n+1)!
+    \end{equation}
+\end{prop}
+
+\begin{proof}
+    We can use induction to prove the proposition. For $n=0$, we have $0!=1!$ which satisfies equation\eqref{eq1}. Suppose that equation\eqref{eq1} holds for $n=m$, then we have
+    \begin{equation*}
+        \begin{split}
+            \sum^{m+1}_{k=0}k\cdot k!&=\sum^{m}_{k=0}k\cdot k!+(m+1)(m+1)!\\
+            &=(m+1)!+(m+1)(m+1)!\\
+            &=(m+2)!
+        \end{split}
+    \end{equation*}
+\end{proof}
+
+\subsection{A stupid way to compute a certain kind of sum}
+    \begin{method}
+        Let $m$ be a positive integer, to compute 
+        \begin{equation}
+            \sum^n_{k=1}k^m,
+        \end{equation}
+        we have the following method: firstly, we write $k^{m+1}$ as $((k-1)+1)^{m+1}$ and expand them.
+        \begin{equation}\label{eq3}
+            \begin{split}
+                (n+1)^{m+1}&=(n+0)^{m+1}+(m+1)\cdot (n+0)^m+C^2_{m+1}(n+0)^{m-1}+\ldots+1,\\
+                (n+0)^{m+1}&=(n-1))^{m+1}+(m+1)\cdot(n-1)^m+C^2_{m+1}(n-1)^{m-1}+\ldots+1,\\
+                (n-1)^{m+1}&=(n-2))^{m+1}+(m+1)\cdot(n-2)^m+C^2_{m+1}(n-2)^{m-2}+\ldots+1,\\
+                &\ldots\\
+                2^{m+1}&=1^{m+1}+(m+1)\cdot1^m+C^2_{m+1}+\ldots+1.
+            \end{split}
+        \end{equation}
+        Note that the second column of the second column of equation\eqref{eq3} is what we want, simplifying the equation, we can have
+        \begin{equation*}
+            (n+1)^{m+1}-1=(m+1)\sum^n_{k=1}k^m+C^2_{m+1}\sum^n_{k=1}k^{m-1}+\ldots+n
+        \end{equation*}
+    \end{method}
+
+    \subsection{Binomial Coefficients}
+    \begin{definition}
+        The binomial coefficient $\binom{m}{n}$ is the number of choices that we pick up $n$ elements from $m$ elements.
+    \end{definition}
+
+    For $\binom{m}{n}$, one may find that 
+    \begin{equation}\label{eq0}
+        \binom{m}{n}=\frac{m!}{(m-n)!n!}
+    \end{equation}
+    Since there are $\frac{m!}{(m-n)!}$ choices to pick up a sequence of length $n$ whose terms are distinct. Since we do not consider the order, we may divide the choices by the number of ways we arrange them ($n!$). Thus equation\eqref{eq0} holds.
+
+    \section{Combinatorial}
+    \subsection{Binomial Coefficients}
+    An algebraic way to work with binomial coefficients has been introduced in the class. Now we introduce a new model to think. Thanks to Renjing, it is he who brought me this brilliant idea, I appreciate him sincerely.
+    \begin{definition}
+        Leadership Model\\
+        We can consider the model of choosing $n$ group members from a group of people and set 1 or more group members as the group leader.
+    \end{definition}
+    Note that there may be sub-leaders, or different kinds of groups (maybe more than 1). The details can be found in the following examples.
+
+    \begin{example}
+        \begin{equation}
+            k\binom{n}{k}=n\binom{n-1}{k-1}
+        \end{equation}
+        We can consider the LHS as choosing $k$ people from $n$ people as a group and then find a leader from those $k$ group members. Similarly, the RHS can be regarded as choosing a group leader from $n$ people first, and then choosing $k-1$ people to form a group together with the leader.
+    \end{example}
+
+    \begin{example}
+        \begin{equation}
+            \sum^{n-1}_{k=1}k\binom{n-1}{k}=n2^{n-1}
+        \end{equation}
+        This is similar to the previous example, but the number of group members can be 1 to n (here we also regard the leader as a member)
+    \end{example}
+
+    \begin{example}
+        \begin{equation}
+            \sum^{n-2}_{k=1}k(k-1)\binom{n-1}{k}=n(n-1)2^{n-2}
+        \end{equation}
+        This is a similar example to the previous one, but the leader becomes 2 instead of only 1.
+    \end{example}
+    
+    \begin{example}
+        Compute
+        \begin{equation}
+            \sum^m_{k=n}\binom{m}{k}\binom{k}{n}
+        \end{equation}
+        Here the sum is that we choose $k$ from $m$ people to form a group, and can then select $n$ people from the group to be the leader of the group. This also means that we first pick out $n$ leaders, and then we select $k-n$ people from the remaining $m-n$ people to form a group together with those leaders. Since $k$ can be any number between $n$ to $m$, the total number of choices is $2^{m-n}$. Thus the results can be written as $2^{m-n}\binom{m}{n}$.
+    \end{example}
+
+    \begin{example}
+        \begin{equation}\label{eq8}
+            \sum^n_{k=1}k\binom{n}{k}^2=n\binom{2n-1}{n-1}
+        \end{equation}
+        The square of the binomial coefficient might be strange, we may rewrite it to make it more beautiful: $\sum^n_{k=1}k\binom{n}{k}^2=\sum^n_{k=1}k\binom{n}{k}\binom{n}{n-k}$. Then one can find that the product means selecting from two different groups of people. For example: boys and girls.\\
+        
+        Suppose that there are $n$ boys and $n$ girls, we need to form a committee with $n$ members and the leader of them is a boy. On the one hand, we can first find a boy to be the leader, then select $n-1$ members to form the committee together with the leader, which is represented by the right-hand side of equation\eqref{eq8}.\\
+        
+        On the other hand, we can also choose $k$ boys and $n-k$ girls (note that $k>0$ since there must be a boy in the committee to be the leader.), then we choose a leader from $k$ boys, which is represented by the left-hand side of equation\eqref{eq8}.
+    \end{example}
+
+    \subsection{Catalan Number}
+        It is important to know the definition and properties of the Catalan numbers.
+        \begin{definition}
+            The Catalan number could be defined as 
+            \begin{equation}
+                C_n=\sum^{n-1}_{k=1}C_{k}C_{n-k}
+            \end{equation}
+            for $n>1$ and $C_1=1$.
+        \end{definition}
+
+        \begin{prop}
+            \begin{equation*}
+                C_n=\frac{1}{n}\binom{2n-2}{n-1}
+            \end{equation*}
+            and its generating function is
+            \begin{equation*}
+                f(x)=\frac{1}{2}(1-\sqrt{1-4x})
+            \end{equation*}
+        \end{prop}
+
+        
+    \section{Generating Function}
+    It is an algebraic way to analyze the probabilities or some special models.
+    \begin{definition}
+        Generating Function
+
+        The generating function of a sequence $(a_n)_n$ is defined by
+        \begin{equation}
+            f(x)=a_0+a_1x+\ldots+a_nx^n+\ldots
+        \end{equation}
+    \end{definition}
+
+    One of the interesting examples is that it would be impossible to find two bias dice such that the possibilities of their sums are the same if you roll them once together.
+
+    \begin{proof}
+        For two bias dice, we can form their generating function based on their distribution of possibility.
+        \begin{equation}
+            \begin{split}
+                f_1(x)=P_{1,1}x+P_{2,1}x^2+\ldots+P_{6,1}x^6\\
+                f_2(x)=P_{1,2}x+P_{2,2}x^2+\ldots+P_{6,2}x^6
+            \end{split}
+        \end{equation}
+        Then the generating function of their sum is
+        \begin{equation}\label{eqg}
+            f(x)=f_1(x)\cdot f_2(x)
+        \end{equation}
+        If the sum is unbiased, then the equation\eqref{eqg} can be written as
+        \begin{equation}\label{eqg1}
+            \begin{split}
+                f_1(x)f_2(x)&=\frac{x^2}{11}(1+x+x^2+\ldots+x^{10})\\
+                (P_{1,1}+\ldots+P_{6,1}x^5)(P_{1,2}&+\ldots+P_{6,2}x^5)=(1+x+x^2+\ldots+x^{10})/11
+            \end{split}
+        \end{equation}
+        However, one may notice that the right-hand side of equation\eqref{eqg1} never attains 0 but the left-hand side would, which gives a contradiction.
+    \end{proof}
+    
+    \newpage
+    
+    \section{Pigeonhole Principle}
+    \begin{example}
+        For a sequence $\{a_n\}$ with $pq+1$ terms, there would be either an increasing subsequence of length $p+1$ or a decreasing subsequence with length $q+1$.
+    \end{example}
+    \begin{proof}
+        Assume that every increasing subsequence has a length smaller or equal to $p$, then consider the maximum length $L_k$ of increasing subsequence starting at $a_k$, by the pigeonhole principle there exists $\{a_{n_1}, a_{n_2},\ldots, a_{n_{q+1}}\}$ such that $L_{n_i}=L_{n_j}$ for $i,j\in\{1,2,\ldots,q+1\}$, $i\neq j$. Then we can confirm that $\{a_{n_k}\}$ is decreasing.\\
+        
+        Otherwise, $a_{n_k}<a_{n_{k+1}}$ induce that for any increasing subsequence starting from $a_{n_{k+1}}$, we can always add $a_{n_k}$ at the beginning and thus forms a subsequence starting from $a_{n_k}$, which would lead to a contradiction to the equality of maximal length of increasing subsequence.
+    \end{proof}
+
+    \begin{example}
+        Find the number of strictly increasing subsequences of length 5 that are in the given sequence.
+        \begin{equation*}
+            5,\,3,\,1,\,6,\,4,\,2,\,7,\,5,\,3,\,8,\,6,\,4,\,9,\,7,\,5.
+        \end{equation*}
+    \end{example}
+    \begin{proof}
+        We may find the maximum length $L_k$ of increasing subsequence ending at $a_k$ and the corresponding number $N_k$ of those sequences.
+        \begin{table}[h!]
+            \centering
+            \begin{tabular}{|l|l|l|l|l|l|l|l|l|l|l|l|l|l|l|l|}
+                \hline
+                $a_n$ & 5 & 3 & 1 & 6 & 4 & 2 & 7 & 5 & 3 & 8  & 6 & 4 & 5  & 7 & 9 \\ \hline
+                $L_n$ & 1 & 1 & 1 & 2 & 2 & 2 & 3 & 3 & 3 & 4  & 4 & 4 & 5  & 5 & 5 \\ \hline
+                $N_n$ & 1 & 1 & 1 & 3 & 2 & 1 & 6 & 3 & 1 & 10 & 4 & 1 & 15 & 5 & 1 \\ \hline
+            \end{tabular}
+        \end{table}
+        Thus we can find the total number of subsequences of length 5 is $$15+5+1=21$$.
+    \end{proof}
+    
+    \begin{example}
+        If $\text{gcd}(a,b)=1$, then $\exists n\in\mathbb{N}\,(b|a^n-1)$
+    \end{example}
+    \begin{proof}
+        Consider the remainder of $a^n-1$ divided by b, i.e. the $\leq r<b$ such that $a^n-1=pn+r$ for some $p\in\mathbb{Z}$. Since $r\in\{0,1,\ldots,b-1\}$ can only be one of the $n$ numbers and we can easily find $n+1$ integers.\\
+        
+        Thus by pigeonhole principle, we know that there exist $n_1,\,n_2\in\mathbb{N}$ with $n_1>n_2$ such that $a^{n_1}$ and $a^{n_2}$ have the same remainder. In this case, $b|a^{n_1}\wedge b|a^{n_2}$, thus we can infer that $b|(a^{n_1}-a^{n_2})$, i.e. $b|a^{n_2}(a^{n_1-n_2-1})$. Since $a$ and $b$ are coprime, we know that $b|a^{n_1-n_2-1}$ and it is obviously that $n_1-n_2\in\mathbb{N}$.
+    \end{proof}
+    \newpage
+    \begin{example}
+        Find the smallest number of dice one should roll to get 4 equal numbers or 4 distinct numbers
+    \end{example}
+    \begin{proof}
+        By the pigeonhole principle, for $n\geq3\times6+1=19$ times, there must be four numbers to be the same. Suppose that there are no four equal numbers, the reputation for a number can be at most 3 times. Then by the pigeonhole principle, if we roll the dice for $n=3\times3+1$, we would get four distinct numbers.
+    \end{proof}
+
+    \begin{example}
+        In a room there are 10 people, none of whom is older than 60, but each of whom is at least 1 year old. Prove that we can always find two groups of people (with no common people) such that the sum of their ages are the same.
+    \end{example}
+
+    \begin{proof}
+        If there exist two people of the same age, we are done. Assume that people are of distinct ages. So the maximum number of a group is $60+59+\ldots+51=555$ and the minimum number is $1+2+\ldots+10=55$. Thus the range of the sum is
+        \begin{equation*}
+            555-55+1=501
+        \end{equation*}
+        It is easy to show that there are $2^10-1=1023$ ways to pick up a nonempty group from those 10 people. Since $1023=501\times2+21$, we could get two different groups $G_1$ and $G_2$ that have the same sum by pigeonhole principle. Note that these two groups may not be disjoint, then we can remove the joining part ($G_1-(G_1\cup G_2)$ and $G_2-(G_1\cup G_2)$) and get two disjoint groups which have the same sum.
+    \end{proof}
+
+    \section{Principle of Invariance}
+    There would be something invariant under an operation.
+    \begin{example}
+        Exercise Sheet 2, Problem 8\\
+        You may find the round of the infected cells is invariant.
+    \end{example}
+    
+    \section{Recursion}
+    The main idea for the recursion is that we separate a large problem into several smaller problems with a similar (or the same) structure as the larger one. However, I do not have enough time to write them out.
+\end{document}

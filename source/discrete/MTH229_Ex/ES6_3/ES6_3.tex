@@ -1,0 +1,77 @@
+\documentclass{article}
+\usepackage{graphicx} % Required for inserting images
+\usepackage{hyperref}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{geometry}
+
+\newtheorem{lemma}{Lemma}
+\newtheorem{method}{Method}
+\newtheorem{definition}{Definition}
+\newtheorem{theorem}{\bf Theorem}
+\newtheorem{proposition}{\bf Proposition}
+\newtheorem{example}{Example}
+\newtheorem{sol}{Solution}
+\newtheorem{corollary}{Corollary}
+
+
+\title{\vspace{-2cm} A Solution to Question 3 of Exercise 6}
+\author{Yifan Li}
+\date{\today}
+
+\begin{document}
+
+\maketitle
+
+\begin{proposition}
+    Let $\mu$ be a spectral radius of $G$, then
+    \begin{equation*}
+        \delta(G)\leq\mu\leq\Delta(G).
+    \end{equation*}
+\end{proposition}
+
+\begin{proof}
+    First we show that $\mu\leq\Delta(G)$. Let $A$ be the adjacent matrix of $G$, since $\mu$ is an eigenvector, thus
+    \begin{equation}\label{eq1}
+        \exists\, v\,(Av=\mu v).
+    \end{equation}
+     \eqref{eq1}. 
+    \begin{equation}\label{eq2}
+        e^TAv=e^T\mu v=\mu e^Tv.
+    \end{equation}
+    Write $v$ as $[v_1,\,v_2,\,\ldots,\,v_n]$, then the right-hand side can be written as $\mu\sum_{i=1}^nv_i$. For the left-hand side, we have
+    \begin{equation}\label{eq3}
+        e^TAv=(e^TA^T)v=(Ae)^Tv=\begin{bmatrix}
+            \deg(v_1) & \ldots & \deg(v_n)
+        \end{bmatrix}v\leq\Delta(G)\,\sum_{i=1}^nv_i.
+    \end{equation}
+    Thus by Equation \eqref{eq2} and Equation \eqref{eq3}, we have $\mu\leq\Delta(G)$.\\
+
+    Now we try to show that $\mu\geq\delta(G)$. Let $e=\begin{bmatrix}
+        1 & 1 & \ldots & 1
+    \end{bmatrix}^T$, note that $Ae$ can be regarded as a linear combination of columns $C_i$ of $A$ and the sum of elements of the vector of $C_i$ is $\deg(v_i)$. In this case, we try to study the sum of vector elements in Equation. Note that in the above proof, we have found that $Ae=\begin{bmatrix}
+        \deg(v_1) & \ldots & \deg(v_n)
+    \end{bmatrix}^T$ and thus the sum of its elements is 
+    \begin{equation}\label{eq4}
+        e^TAe=\sum_{i=1}^{n}\deg(v_i)=2\,\vert E(G)\vert.
+    \end{equation}
+    Note that $e$ can also be written as a linear combination of eigenbasis. Let $\{\alpha_1,\,\alpha_2,\,\ldots,\,\alpha_n\}$ be an orthonormal eigenbasis of $A$, then
+    \begin{equation*}
+        \exists r_1,\,r_2,\,\ldots,\,r_n\,(e=\sum_{i=1}^{n}r_i\alpha_i).
+    \end{equation*}
+    Then
+    \begin{equation}\label{eq5}
+        \begin{split}
+            e^TAe&=(\sum_{i=1}^{n}r_i\alpha^T_i)\left(A(\sum_{i=1}^{n}r_i\alpha_i)\right)=(\sum_{i=1}^{n}r_i\alpha^T_i)(\sum_{i=1}^{n}\lambda_i r_i\alpha_i)=\sum_{i=1}^{n}\lambda_ir_i^2\\
+            &\leq\mu\sum_{i=1}^{n}r_i^2=\mu e^Te=\mu n.
+        \end{split}
+    \end{equation}
+    By Equation \eqref{eq4} and Equation \eqref{eq5}, one may find that 
+    \begin{equation*}
+        \mu n \geq 2 \vert E(G) \vert \geq n \delta(G).
+    \end{equation*}
+    Thus $\mu\geq\delta(G)$.
+\end{proof}
+
+\end{document}

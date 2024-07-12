@@ -1,0 +1,109 @@
+\documentclass{article}
+\usepackage{graphicx} % Required for inserting images
+\usepackage{hyperref}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{geometry}
+\usepackage{enumerate}
+\newtheorem{lemma}{Lemma}
+\newtheorem{method}{Method}
+\newtheorem{definition}{Definition}
+\newtheorem{theorem}{\bf Theorem}
+\newtheorem{proposition}{\bf Proposition}
+\newtheorem{example}{Example}
+\newtheorem{sol}{Solution}
+\newtheorem{corollary}{Corollary}
+
+
+\title{\vspace{-2cm} A Solution to Question 3 of Exercise 6}
+\author{Yifan Li}
+\date{\today}
+
+\begin{document}
+
+\maketitle
+
+\begin{proposition}
+    Let $\mu$ be a spectral radius of $G$, then
+    \begin{equation*}
+        \delta(G)\leq\mu\leq\Delta(G).
+    \end{equation*}
+\end{proposition}
+
+\begin{proof}
+    First we show that $\mu\leq\Delta(G)$. Let $A$ be the adjacent matrix of $G$, since $\mu$ is an eigenvector, thus
+    \begin{equation}\label{eq1}
+        \exists\, v\,(Av=\mu v).
+    \end{equation}
+    Consider each element of $Av$ and $\mu v$ in the Equation \eqref{eq1}, it gives that $\mu v_i$ is just a partial sum of $\{v_1,\,v_2,\,\ldots,\,v_n\}$.
+    \begin{equation*}
+        \mu v_i = v_{n_1}+v_{n_2}+\ldots+v_{n_m}.
+    \end{equation*}
+    Consider the largest $v_i$, denoted by $v_{max}=\max{\{v_1,\,v_2,\,\ldots,\,v_n\}}$, then we may find that
+    \begin{equation*}
+        \mu v_{max}=v_{n_1}+v_{n_2}+\ldots+v_{n_m}\leq\Delta(G)v_{max}.
+    \end{equation*}
+    Thus $\mu\leq\Delta(G)$.\\
+
+    Then we try to show that $\delta(G)\leq\mu$. One may find that the previous idea does not help, so we need try other ways. Notice that the sum of elements in each row is the degree of a vertix. Let $e=\begin{bmatrix}
+        1 & 1 & \ldots & 1
+    \end{bmatrix}^T$, then we have $Ae=\begin{bmatrix}
+        \deg(v_1) & \ldots & \deg(v_n)
+    \end{bmatrix}^T$. Remember that the sum of degrees is twice of the size of the graph, thus
+    \begin{equation}\label{eq4}
+        e^TAe=\sum_{i=1}^{n}\deg(v_i)=2\,\vert E(G)\vert.
+    \end{equation}
+    Also, we can regard $e$ as a linear combination of an eigenbasis. Since $A$ is symmetric, we know that it can be diagonalized, which means that we can choose an orthonormal eigenbasis $\{\alpha_1,\,\alpha_2,\,\ldots,\,\alpha_n\}$. Then
+    \begin{equation*}
+        \exists r_1,\,r_2,\,\ldots,\,r_n\,(e=\sum_{i=1}^{n}r_i\alpha_i).
+    \end{equation*}
+    Now we compute $e^TAe$ and compare it with Equation \eqref{eq4}.
+    \begin{equation}\label{eq5}
+        \begin{split}
+            e^TAe&=(\sum_{i=1}^{n}r_i\alpha^T_i)\left(A(\sum_{i=1}^{n}r_i\alpha_i)\right)=(\sum_{i=1}^{n}r_i\alpha^T_i)(\sum_{i=1}^{n}\lambda_i r_i\alpha_i)=\sum_{i=1}^{n}\lambda_ir_i^2\\
+            &\leq\mu\sum_{i=1}^{n}r_i^2=\mu e^Te=\mu n.
+        \end{split}
+    \end{equation}
+    By Equation \eqref{eq4} and Equation \eqref{eq5}, one may find that 
+    \begin{equation*}
+        \mu n \geq 2 \vert E(G) \vert \geq n \delta(G).
+    \end{equation*}
+    Thus $\mu\geq\delta(G)$.
+\end{proof}
+
+\newpage
+\begin{proposition}
+    Let $G$ be a connected graph, and $S$ be the spectum of $G$. Show that
+    \begin{enumerate}[(a)]
+        \item $\Delta(G)\in S$ if and only if $G$ is regular.
+        \item $-\Delta(G)\in S$ if and only if $G$ is regular and bipartite.
+    \end{enumerate}
+\end{proposition}
+
+\begin{proof}
+    \begin{enumerate}[(a)]
+        \item ``$\Leftarrow$'' is not difficult since by the previous proposition we know that $\delta(G)\leq\mu\leq\Delta(G)$ and $\delta(G)=\Delta(G)$ inplies that $\Delta(G)=\mu\in S$. 
+        
+        Now we try to prove ``$\Rightarrow$''. Suppose $\Delta(G)\in S$. Let $p_m$ be the vertex corresponds to $v_{max}$ where $v_{max}$ is as defined in the previous proof. By the previous assertion that 
+        \begin{equation*}
+            \Delta(G)v_{max}\leq\mu v_{max}=v_{n_1}+v_{n_2}+\ldots+v_{n_m}\leq\mathrm{degree}(p_m)v_{max}\leq\Delta(G)v_{max},
+        \end{equation*}
+        we know that three ``$\leq$'' should be ``$=$'', thus $degree(p_m)=\Delta(G)$ and $v_{n_k}=v_{max}$. Apply the above inplication to neighborhoods of $p_m$ and repeat to neighborhoods of neighborhoods. Since the graph is connected, we may say that each vertex has degree $\Delta(G)$. Thus $G$ is a regular.
+
+        \item First, we prove ``$\Leftarrow$''. The adjacent matrix of a regular bipartite graph can be written as
+        \begin{equation*}
+            A=\begin{bmatrix}
+                O_m & J_{m,n} \\ J_{n,m} & O_n,
+            \end{bmatrix}
+        \end{equation*}
+        where $O_m$ is an $m\times m$ matrix with entries all be $0$ and $J_{m,n}$ is an $m\times n$ matrix with entries all be $1$. To find its eigenvalue, we may first try some special vectors. Let $v_0=\begin{bmatrix}
+            a & \ldots & a & b & \ldots & b
+        \end{bmatrix}^T$ whose first $m$ entries being $a$ and others being $b$. One may find that when $a=\sqrt{n}$ and $b=\sqrt{m}$, $v$ is an eigenvector corresponding to $\sqrt{mn}$, but it is not what we want, got stuck.
+    \end{enumerate}
+\end{proof}
+
+Additional things:
+
+$\mu v_i=\sum v_j$ where $i$ and $j$ are adjacent, then consider $\max\{\vert v_i\vert\}$, we may find those $v_j$=$-v_i$, and thus those $v_j$ are also in $\max\{\vert v_i\vert\}$. Repeat the argument and find that for any two elements in $v$, they are either equal or add up to $0$. Conside those elements having the same sign, applying $A$, they would be mapped to all other rows, and thus it is bipartite.
+\end{document}
