@@ -50,7 +50,7 @@ Below are the notes I took during lectures in my university. None of this is off
 ### Semester 1
 
 - Complex Analysis (2023, J. Xu)
-
+  - [An Example in Complex Analysis](../../../../../source/An_Example_in_Complex_Analysis.pdf)
 - Ordinary Differential Equations and Control (2023, Z. Wu)
 
   - [Some Interesting Properties in System of Linear First-order ODE](../../../../../source/ODE.pdf)
@@ -58,13 +58,19 @@ Below are the notes I took during lectures in my university. None of this is off
 - Discrete Mathematics (2023, Aistis)
 
 - Vector Fields (2023, Stephen)
+  - [Basic Concepts](../../../../../source/vec/Basic_Concepts.pdf)
+  - [Vector Field Mid Review](../../../../../source/vec/Vector_Field_MidRev.pdf)
+  - [Fluid Mechanics](../../../../../source/vec/Fluid_Mechanics.pdf)
 
 ### Semester 2
 
 - Partial Differential Equations (2024, Y. Liu)
-
+  - [Cauchy Problem for 1st Order Quasilinear PDE](../../../../../source/pde/Cauchy_Problem_for_1st_Order_Quasilinear_PDE.pdf)
+  - [From Mean-Value Property to Maximum Principle](../../../../../source/pde/From_Mean-Value_Property_to_Maximum_Principle.pdf)
+  - [Review for PDE (before class test 1)](../../../../../source/pde/Review_for_PDE.pdf)
 - Numerical Analysis (2024, Q. Niu)
 
 - Classical Mechanics (2024, Stephen)
 
 - Metric Spaces (2024, Alastair)
+  - [Personal Solution to Exercise 4](../../../../../source/metric/Exercise4.pdf)
