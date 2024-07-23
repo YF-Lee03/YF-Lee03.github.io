@@ -29,6 +29,7 @@ highlighter: rouge
 svg:
   optimize: true
 # Build settings
+markdown: kramdown
 mathjax: true
 
 # theme: minima
