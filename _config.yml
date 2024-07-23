@@ -29,6 +29,8 @@ highlighter: rouge
 svg:
   optimize: true
 # Build settings
+mathjax: true
+
 # theme: minima
 highlighter-theme: monokai
 date_format: "%Y-%M-%D"
@@ -36,7 +38,6 @@ plugins:
   - jekyll-feed
 category_dir: category/
 tag_dir: tag/
-mathjax: true
 
 # Exclude from processing.
 # The following items will not be processed, by default.
