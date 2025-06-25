@@ -2,7 +2,7 @@
 layout: post
 title:  "Category Theory"
 date:   2024-07-12 15:55:29 +0800
-categories: Category Theory
+categories: Category_Theory
 ---
 
 
