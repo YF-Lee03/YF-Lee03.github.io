@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Academic homepage — research, publications, projects, and news.">
-  <meta name="theme-color" content="#f3f0e8">
+  <meta name="description" content="Academic homepage — research, publications, curriculum vitae, and contact.">
+  <meta name="theme-color" content="#f4f0e7">
   <title>Your Name — Academic Homepage</title>
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="styles.css">
@@ -12,155 +12,72 @@
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
-
   <header class="site-header">
-    <a class="wordmark" href="#top" aria-label="Home">YN<span>.</span></a>
+    <a class="wordmark" href="./" aria-label="Home">YN<span>.</span></a>
     <nav aria-label="Primary navigation">
       <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav">Menu</button>
       <ul id="site-nav">
-        <li><a href="#about">About</a></li>
-        <li><a href="#research">Research</a></li>
-        <li><a href="#publications">Publications</a></li>
-        <li><a href="#news">News</a></li>
+        <li><a href="./" aria-current="page">Home</a></li>
+        <li><a href="research/">Research</a></li>
+        <li><a href="publications/">Publications</a></li>
+        <li><a href="cv/">CV</a></li>
+        <li><a href="contact/">Contact</a></li>
       </ul>
     </nav>
-    <button class="theme-toggle" type="button" aria-label="Toggle color theme" title="Toggle color theme">
-      <span aria-hidden="true">◐</span>
-    </button>
+    <button class="theme-toggle" type="button" aria-label="Toggle color theme" title="Toggle color theme"><span aria-hidden="true">◐</span></button>
   </header>
 
   <main id="main">
-    <section class="hero" id="top">
-      <div class="hero-copy">
-        <p class="eyebrow">Academic portfolio · 2026</p>
+    <section class="home">
+      <div class="home-intro">
+        <p class="eyebrow">Academic homepage</p>
         <h1>Your Name</h1>
-        <p class="lede">I explore ideas at the intersection of <em>your research area</em>, <em>your second area</em>, and real-world impact.</p>
-        <div class="hero-links">
-          <a class="button primary" href="#research">Explore my work</a>
-          <a class="button text-button" href="#contact">Get in touch <span aria-hidden="true">↗</span></a>
+        <p class="title-line">Researcher / Student at <a href="#">Your Institution</a></p>
+        <p class="lede">My research explores <em>your primary field</em>, with a particular interest in <em>your focused research question</em> and its real-world implications.</p>
+        <div class="home-actions">
+          <a class="arrow-link" href="research/">View research <span aria-hidden="true">→</span></a>
+          <a class="arrow-link" href="cv/">Curriculum vitae <span aria-hidden="true">→</span></a>
         </div>
       </div>
-      <aside class="profile-card" aria-label="Profile summary">
+
+      <aside class="portrait-wrap">
         <div class="portrait-placeholder" role="img" aria-label="Portrait placeholder">YN</div>
-        <div>
-          <p class="profile-role">Researcher / Student</p>
-          <p class="profile-place">Your institution<br>Your city, country</p>
-        </div>
-        <span class="available"><i aria-hidden="true"></i> Open to collaboration</span>
+        <p>Replace with your portrait</p>
       </aside>
     </section>
 
-    <section class="section intro" id="about">
-      <div class="section-label"><span>01</span> About</div>
-      <div class="section-body">
-        <h2>Curious about difficult questions and useful answers.</h2>
-        <div class="two-column">
-          <p>I am a researcher interested in <strong>your primary field</strong>. My work focuses on understanding complex problems and translating rigorous ideas into practical outcomes.</p>
-          <p>I am currently based at <strong>Your Institution</strong>. Outside research, I enjoy learning across disciplines and building projects that make knowledge easier to share.</p>
-        </div>
-        <ul class="quick-facts" aria-label="Research interests">
+    <section class="home-details" aria-label="Academic summary">
+      <div>
+        <p class="mini-label">Interests</p>
+        <ul class="plain-list">
           <li>Your research topic</li>
           <li>Your methodology</li>
           <li>Your application area</li>
         </ul>
       </div>
-    </section>
-
-    <section class="section" id="research">
-      <div class="section-label"><span>02</span> Research</div>
-      <div class="section-body">
-        <div class="section-heading">
-          <h2>Selected work</h2>
-          <p>Questions I am currently thinking about.</p>
-        </div>
-        <div class="project-grid">
-          <article class="project featured">
-            <div class="project-number">A</div>
-            <p class="project-type">Current research</p>
-            <h3>Your primary research project</h3>
-            <p>A concise explanation of the problem, your approach, and why the result matters. Replace this text with two or three clear sentences.</p>
-            <a href="#" aria-label="Read more about your primary research project">Read project <span aria-hidden="true">→</span></a>
-          </article>
-          <article class="project">
-            <div class="project-number">B</div>
-            <p class="project-type">Selected project</p>
-            <h3>A second line of inquiry</h3>
-            <p>Briefly introduce another research direction, collaboration, or technical project.</p>
-            <a href="#" aria-label="Read more about the second project">Read project <span aria-hidden="true">→</span></a>
-          </article>
-          <article class="project">
-            <div class="project-number">C</div>
-            <p class="project-type">Open question</p>
-            <h3>What comes next?</h3>
-            <p>Use this space for an emerging idea or a topic where you welcome collaboration.</p>
-            <a href="#contact">Discuss this idea <span aria-hidden="true">↘</span></a>
-          </article>
-        </div>
+      <div>
+        <p class="mini-label">Currently</p>
+        <p>Working on a project about <strong>your current research question</strong> and welcoming conversations with researchers in adjacent fields.</p>
+      </div>
+      <div>
+        <p class="mini-label">Latest</p>
+        <p><time datetime="2026-09">September 2026</time><br>Academic homepage launched.</p>
       </div>
     </section>
 
-    <section class="section" id="publications">
-      <div class="section-label"><span>03</span> Publications</div>
-      <div class="section-body">
-        <div class="section-heading">
-          <h2>Publications</h2>
-          <p>Selected papers and preprints.</p>
-        </div>
-        <ol class="publication-list">
-          <li>
-            <span class="pub-year">2026</span>
-            <div>
-              <h3>Your paper title goes here</h3>
-              <p><strong>Your Name</strong>, Coauthor Name, Coauthor Name</p>
-              <p class="venue">Conference or Journal · Forthcoming</p>
-              <div class="pub-links"><a href="#">Paper</a><a href="#">Code</a><a href="#">BibTeX</a></div>
-            </div>
-          </li>
-          <li>
-            <span class="pub-year">2025</span>
-            <div>
-              <h3>Another publication or working paper</h3>
-              <p>Coauthor Name, <strong>Your Name</strong></p>
-              <p class="venue">Workshop, Journal, or Preprint</p>
-              <div class="pub-links"><a href="#">Paper</a><a href="#">Project</a></div>
-            </div>
-          </li>
-        </ol>
-        <p class="empty-note">These sample entries are ready to be replaced with your work.</p>
-      </div>
-    </section>
-
-    <section class="section" id="news">
-      <div class="section-label"><span>04</span> News</div>
-      <div class="section-body">
-        <div class="section-heading">
-          <h2>Recent notes</h2>
-          <p>Research, talks, and milestones.</p>
-        </div>
-        <ul class="news-list">
-          <li><time datetime="2026-09">Sep 2026</time><p>Academic homepage launched.</p></li>
-          <li><time datetime="2026-01">2026</time><p>Add your latest research update, award, talk, or new position here.</p></li>
-          <li><time datetime="2025-01">2025</time><p>Add an earlier milestone to give visitors a quick view of your trajectory.</p></li>
-        </ul>
-      </div>
-    </section>
-
-    <section class="contact" id="contact">
-      <p class="eyebrow">Let’s connect</p>
-      <h2>Ideas grow through conversation.</h2>
-      <p>I welcome conversations about research, collaboration, and interesting problems.</p>
-      <div class="contact-links">
-        <a href="#" aria-label="Email address placeholder">Email</a>
-        <a href="https://github.com/YF-Lee03">GitHub</a>
-        <a href="#" aria-label="Google Scholar profile placeholder">Google Scholar</a>
-        <a href="#" aria-label="Curriculum vitae placeholder">CV</a>
+    <section class="home-note">
+      <span class="note-mark" aria-hidden="true">∗</span>
+      <div>
+        <h2>A short introduction</h2>
+        <p>I am interested in careful questions, transparent methods, and research that remains connected to the world beyond the page. This paragraph can become a concise personal statement: where you are, what you study, and what motivates your work.</p>
+        <a class="arrow-link" href="contact/">Contact me <span aria-hidden="true">↗</span></a>
       </div>
     </section>
   </main>
 
   <footer>
     <p>© <span id="year">2026</span> Your Name</p>
-    <p>Built with care and hosted on GitHub Pages.</p>
+    <p>Hosted on GitHub Pages.</p>
   </footer>
 </body>
 </html>
