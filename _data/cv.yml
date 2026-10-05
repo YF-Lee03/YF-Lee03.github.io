@@ -35,10 +35,10 @@
 - id: education
   section: Education
   items:
-    - dates: 2025 – 2026
+    - dates: 2025 - 2026
       title: MSc in Mathematics and Foundations of Computer Science
       detail: University of Oxford
-    - dates: 2021 – 2025
+    - dates: 2021 - 2025
       title: BS in Applied Mathematics
       detail: Xi'an Jiaotong-Liverpool University (XJTLU)
 
