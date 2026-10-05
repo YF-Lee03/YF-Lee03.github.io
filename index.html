@@ -1,43 +1,15 @@
-<!doctype html>
-<html lang="en">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Academic homepage — research, publications, curriculum vitae, and contact.">
-  <meta name="theme-color" content="#f4f0e7">
-  <title>Y.Li — Home</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400..700;1,6..72,400..700&family=Hanken+Grotesk:wght@400..800&display=swap">
-  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
-  <link rel="stylesheet" href="styles.css">
-  <script src="script.js" defer></script>
-</head>
-<body>
-  <a class="skip-link" href="#main">Skip to content</a>
-  <header class="site-header">
-    <a class="wordmark" href="./" aria-label="Home">Y<span>.</span> Li</a>
-    <nav aria-label="Primary navigation">
-      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav">Menu</button>
-      <ul id="site-nav">
-        <li><a href="./" aria-current="page">Home</a></li>
-        <li><a href="research/">Research</a></li>
-        <li><a href="publications/">Publications</a></li>
-        <li><a href="cv/">CV</a></li>
-        <li><a href="contact/">Contact</a></li>
-      </ul>
-    </nav>
-    <button class="theme-toggle" type="button" aria-label="Toggle color theme" title="Toggle color theme"><span aria-hidden="true">◐</span></button>
-  </header>
-
-  <main id="main">
+---
+layout: default
+---
     <section class="home">
       <div class="home-intro">
         <p class="eyebrow">Academic homepage</p>
-        <h1>Your Name</h1>
+        <h1>{{ site.author }}</h1>
         <p class="title-line">Student at <a href="https://www.maths.ox.ac.uk/">University of Oxford</a></p>
         <p class="lede">My research explores <em>your primary field</em>, with a particular interest in <em>your focused research question</em> and its real-world implications.</p>
         <div class="home-actions">
-          <a class="arrow-link" href="research/">View research <span aria-hidden="true">→</span></a>
-          <a class="arrow-link" href="cv/">Curriculum vitae <span aria-hidden="true">→</span></a>
+          <a class="arrow-link" href="{{ '/research/' | relative_url }}">View research <span aria-hidden="true">→</span></a>
+          <a class="arrow-link" href="{{ '/cv/' | relative_url }}">Curriculum vitae <span aria-hidden="true">→</span></a>
         </div>
       </div>
 
@@ -71,14 +43,6 @@
       <div>
         <h2>A short introduction</h2>
         <p>I am interested in careful questions, transparent methods, and research that remains connected to the world beyond the page. This paragraph can become a concise personal statement: where you are, what you study, and what motivates your work.</p>
-        <a class="arrow-link" href="contact/">Contact me <span aria-hidden="true">↗</span></a>
+        <a class="arrow-link" href="{{ '/contact/' | relative_url }}">Contact me <span aria-hidden="true">↗</span></a>
       </div>
     </section>
-  </main>
-
-  <footer>
-    <p>© <span id="year">2026</span> Your Name</p>
-    <p>Hosted on GitHub Pages.</p>
-  </footer>
-</body>
-</html>

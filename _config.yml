@@ -1,0 +1,11 @@
+# Site-wide settings. Change `author` once and it updates the homepage,
+# footer, and the bolded name in the publication list.
+title: Y. Li
+author: Your Name
+description: Academic homepage — research, publications, curriculum vitae, and contact.
+lang: en
+
+exclude:
+  - README.md
+  - Gemfile
+  - Gemfile.lock

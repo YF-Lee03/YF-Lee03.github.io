@@ -1,0 +1,17 @@
+# Newest first. Names matching `author` in _config.yml are bolded automatically.
+- year: 2026
+  title: Your paper title goes here
+  authors: [Your Name, Coauthor Name, Coauthor Name]
+  venue: Conference or Journal · Forthcoming
+  links:
+    - { label: Paper, url: "#" }
+    - { label: Code, url: "#" }
+    - { label: BibTeX, url: "#" }
+
+- year: 2025
+  title: Another publication or working paper
+  authors: [Coauthor Name, Your Name]
+  venue: Workshop, Journal, or Preprint
+  links:
+    - { label: Paper, url: "#" }
+    - { label: Project, url: "#" }

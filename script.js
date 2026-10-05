@@ -1,18 +1,16 @@
+// The initial theme is applied by an inline script in _layouts/default.html,
+// before first paint. This file only handles user interaction.
 const root = document.documentElement;
 const themeToggle = document.querySelector(".theme-toggle");
+const themeColor = document.querySelector('meta[name="theme-color"]');
 const menuToggle = document.querySelector(".menu-toggle");
 const menu = document.querySelector("#site-nav");
-
-const savedTheme = localStorage.getItem("theme");
-const systemDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
-if (savedTheme === "dark" || (!savedTheme && systemDark)) {
-  root.dataset.theme = "dark";
-}
 
 themeToggle?.addEventListener("click", () => {
   const nextTheme = root.dataset.theme === "dark" ? "light" : "dark";
   root.dataset.theme = nextTheme;
-  localStorage.setItem("theme", nextTheme);
+  themeColor?.setAttribute("content", nextTheme === "dark" ? "#181c19" : "#f4f0e7");
+  try { localStorage.setItem("theme", nextTheme); } catch (e) {}
 });
 
 menuToggle?.addEventListener("click", () => {
@@ -27,4 +25,5 @@ menu?.querySelectorAll("a").forEach((link) => {
   });
 });
 
-document.querySelector("#year").textContent = new Date().getFullYear();
+const year = document.querySelector("#year");
+if (year) year.textContent = new Date().getFullYear();

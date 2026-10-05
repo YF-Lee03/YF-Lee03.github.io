@@ -1,0 +1,14 @@
+# Each section becomes a heading on the CV page; items are listed in order.
+- section: Education
+  items:
+    - { dates: Your dates, title: Your degree, detail: Your Institution · Department or programme }
+    - { dates: Your dates, title: Previous degree, detail: Previous Institution · Field of study }
+
+- section: Research experience
+  items:
+    - { dates: Your dates, title: Your role or project, detail: Research group or institution · Supervisor or collaborator }
+
+- section: Awards & service
+  items:
+    - { dates: Year, title: "Award, scholarship, or academic service", detail: "A short description, if useful." }
+  note: A downloadable PDF can be added after you provide the file.

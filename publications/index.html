@@ -1,34 +1,26 @@
-<!doctype html>
-<html lang="en">
-<head>
-  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Publications, preprints, and scholarly work.">
-  <meta name="theme-color" content="#f4f0e7"><title>Publications — Y. Li</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400..700;1,6..72,400..700&family=Hanken+Grotesk:wght@400..800&display=swap">
-  <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml"><link rel="stylesheet" href="../styles.css"><script src="../script.js" defer></script>
-</head>
-<body>
-<a class="skip-link" href="#main">Skip to content</a>
-<header class="site-header">
-  <a class="wordmark" href="../" aria-label="Home">Y<span>.</span> Li</a>
-  <nav aria-label="Primary navigation"><button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav">Menu</button>
-    <ul id="site-nav"><li><a href="../">Home</a></li><li><a href="../research/">Research</a></li><li><a href="../publications/" aria-current="page">Publications</a></li><li><a href="../cv/">CV</a></li><li><a href="../contact/">Contact</a></li></ul>
-  </nav>
-  <button class="theme-toggle" type="button" aria-label="Toggle color theme" title="Toggle color theme"><span aria-hidden="true">◐</span></button>
-</header>
-<main id="main">
-  <header class="page-header"><p class="breadcrumb"><a href="../">Home</a> / Publications</p><p class="eyebrow">Papers &amp; preprints</p><h1>Publications</h1><p class="lede">Research outputs listed in reverse chronological order.</p></header>
-  <div class="content">
-    <section class="content-section">
-      <h2>Selected publications</h2>
-      <ol class="entry-list">
-        <li class="entry"><span class="entry-year">2026</span><article><h3>Your paper title goes here</h3><p><strong>Your Name</strong>, Coauthor Name, Coauthor Name</p><p class="venue">Conference or Journal · Forthcoming</p><div class="entry-links"><a href="#">Paper</a><a href="#">Code</a><a href="#">BibTeX</a></div></article></li>
-        <li class="entry"><span class="entry-year">2025</span><article><h3>Another publication or working paper</h3><p>Coauthor Name, <strong>Your Name</strong></p><p class="venue">Workshop, Journal, or Preprint</p><div class="entry-links"><a href="#">Paper</a><a href="#">Project</a></div></article></li>
-      </ol>
-      <p class="placeholder-note">These are sample entries. Send your publication list or CV and they can be replaced in one pass.</p>
-    </section>
-  </div>
-</main>
-<footer><p>© <span id="year">2026</span> Your Name</p><p>Hosted on GitHub Pages.</p></footer>
-</body>
-</html>
+---
+layout: page
+title: Publications
+description: Publications, preprints, and scholarly work.
+eyebrow: Papers & preprints
+lede: Research outputs listed in reverse chronological order.
+---
+<section class="content-section">
+  <h2>Selected publications</h2>
+  <ol class="entry-list">
+    {%- for pub in site.data.publications %}
+    <li class="entry">
+      <span class="entry-year">{{ pub.year }}</span>
+      <article>
+        <h3>{{ pub.title }}</h3>
+        <p>{% for name in pub.authors %}{% if name == site.author %}<strong>{{ name }}</strong>{% else %}{{ name }}{% endif %}{% unless forloop.last %}, {% endunless %}{% endfor %}</p>
+        <p class="venue">{{ pub.venue }}</p>
+        {%- if pub.links %}
+        <div class="entry-links">{% for link in pub.links %}<a href="{{ link.url }}">{{ link.label }}</a>{% endfor %}</div>
+        {%- endif %}
+      </article>
+    </li>
+    {%- endfor %}
+  </ol>
+  <p class="placeholder-note">These are sample entries. Send your publication list or CV and they can be replaced in one pass.</p>
+</section>
