@@ -13,6 +13,9 @@
         {%- if item.summary %}
         <p class="summary">{{ item.summary }}</p>
         {%- endif %}
+        {%- if item.links %}
+        <div class="entry-links">{% for link in item.links %}<a href="{{ link.url }}">{{ link.label }}</a>{% endfor %}</div>
+        {%- endif %}
       </div>
     </li>
     {%- endfor %}
