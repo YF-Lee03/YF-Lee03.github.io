@@ -144,8 +144,7 @@ h3 { font-size: 1.18rem; line-height: 1.25; }
 .timeline p { margin: 0; font-size: .9rem; }
 
 .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; }
-.contact-card { padding-top: 1.2rem; border-top: 1px solid var(--line); }
-.contact-card h2 { margin-bottom: 1rem; padding: 0; border: 0; font-size: 1.42rem; }
+.contact-card h2 { margin-bottom: 1.2rem; padding-bottom: .8rem; border-bottom: 1px solid var(--line); font-size: 1.42rem; }
 .contact-card p { margin-bottom: .45rem; }
 .placeholder-note { padding: 1rem; color: var(--muted); background: var(--wash); border-left: 2px solid var(--accent); font-size: .78rem; }
 
