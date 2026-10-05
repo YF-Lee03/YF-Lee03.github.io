@@ -20,6 +20,7 @@ Shared presentation and interactions live in `styles.css` and `script.js`.
 - Add papers to `_data/publications.yml`; your name is bolded automatically.
 - Add entries to the sections in `_data/cv.yml`, or add a new section with its own `id`.
 - The introduction and contact details are written directly in `index.html`.
+- The CV linked from the homepage is `assets/Yifan_Li_CV.pdf`; replace that file to update it.
 - An at-a-glance band (interests, reading groups, latest news) is kept in `index.html` inside a `{% comment %}` block; remove the wrapper to show it.
 
 To add a portrait, upload an image to `assets/` and add an `img` element to the `home` section in `index.html`.
