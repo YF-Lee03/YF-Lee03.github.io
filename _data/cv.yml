@@ -1,5 +1,6 @@
 # Dated sections of the homepage, in order. `id` is the section anchor (e.g. #research).
-# Item fields: dates, title, detail (optional), summary (optional), links (optional).
+# Item fields: dates, title, url (optional; links the title), detail (optional),
+# summary (optional).
 # HTML and inline LaTeX math between $...$ (rendered with KaTeX) are allowed.
 # Put files such as PDFs in assets/ and link them as /assets/<file name>.
 # `compact: true` renders a tighter list with titles only (e.g. for awards).
@@ -16,16 +17,14 @@
         model-theoretic viewpoints. Extended the approach to $\operatorname{Out}(F_n)$: a geometric
         graph built from embedded spheres has $\operatorname{Out}(F_n)$ as its automorphism group
         if and only if it is bi-interpretable with the augmented Cayley graph of $\operatorname{Out}(F_n)$.
-      # links:
-      #   - { label: Dissertation, url: /assets/dissertation.pdf }
+      # url: /assets/dissertation.pdf
     - dates: 2024 – 2025
       title: Geometric group theory and mapping class groups
       detail: Final year project · Supervised by Prof. Robert Tang, XJTLU
       summary: >-
         Foundations of geometric group theory and mapping class groups, focusing on Gromov
         hyperbolicity of curve graphs and acylindrical hyperbolicity of mapping class groups.
-      # links:
-      #   - { label: Report, url: /assets/final-year-project.pdf }
+      # url: /assets/final-year-project.pdf
     - dates: "2024"
       title: Packing edge-colorings of subcubic outerplanar graphs
       detail: Research project with Sijin Li and Xujun Liu
@@ -34,8 +33,7 @@
         of Hocquard et al., using minimal-counterexample and structural arguments, and established
         sharpness examples for several generalized packing-coloring parameters. Published in
         <em>Discrete Applied Mathematics</em> (2026).
-      links:
-        - { label: DOI, url: "https://doi.org/10.1016/j.dam.2026.04.033" }
+      url: "https://doi.org/10.1016/j.dam.2026.04.033"
 
 - id: education
   section: Education
