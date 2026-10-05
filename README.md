@@ -12,6 +12,7 @@ The earlier multi-page version is kept on the `multipage-backup` branch.
 - `_data/publications.yml` — publication list (newest first)
 - `_data/cv.yml` — Research and Education sections
 - `assets/fonts/` — self-hosted Newsreader and Hanken Grotesk (SIL OFL)
+- `assets/katex/` — self-hosted KaTeX 0.19.0 (MIT) for inline `$...$` math
 
 Shared presentation and interactions live in `styles.css` and `script.js`.
 

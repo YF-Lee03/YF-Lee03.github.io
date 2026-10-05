@@ -74,6 +74,8 @@ h3 { font-size: 1.18rem; line-height: 1.25; }
 .arrow-link { font-size: .78rem; font-weight: 750; letter-spacing: .05em; text-decoration: none; text-transform: uppercase; }
 .arrow-link span { display: inline-block; margin-left: .35rem; transition: transform .2s ease; }
 .arrow-link:hover span { transform: translateX(4px); }
+/* KaTeX defaults to 1.21em, which runs large beside Newsreader and Hanken Grotesk. */
+.katex { font-size: 1.08em; }
 
 .home { padding: 5.5rem 0 4.5rem; }
 .title-line { margin-bottom: 2rem; font-family: var(--serif); font-size: 1.05rem; }

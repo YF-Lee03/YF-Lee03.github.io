@@ -1,19 +1,20 @@
 # Dated sections of the homepage, in order. `id` is the section anchor (e.g. #research).
-# Item fields: dates, title, detail (optional), summary (optional). HTML is allowed.
+# Item fields: dates, title, detail (optional), summary (optional). HTML and inline
+# LaTeX math between $...$ (rendered with KaTeX) are allowed.
 # `compact: true` renders a tighter list with titles only (e.g. for awards).
 
 - id: research
   section: Research
   items:
     - dates: "2026"
-      title: The model theory of curve graphs and Out(<i>F<sub>n</sub></i>)
+      title: 'The model theory of curve graphs and $\operatorname{Out}(F_n)$'
       detail: MSc dissertation · Supervised by Prof. Dawid Kielak, University of Oxford
       summary: >-
-        Studied rigidity phenomena linking mapping class groups, outer automorphism groups of
-        surface groups, and automorphism groups of curve complexes, from both topological and
-        model-theoretic viewpoints. Extended the approach to Out(<i>F<sub>n</sub></i>): a geometric
-        graph built from embedded spheres has Out(<i>F<sub>n</sub></i>) as its automorphism group
-        if and only if it is bi-interpretable with the augmented Cayley graph of Out(<i>F<sub>n</sub></i>).
+        Studied rigidity phenomena linking mapping class groups, $\operatorname{Out}(\pi_1(\Sigma))$,
+        and $\operatorname{Aut}(\mathscr{C}(\Sigma))$, from both topological and
+        model-theoretic viewpoints. Extended the approach to $\operatorname{Out}(F_n)$: a geometric
+        graph built from embedded spheres has $\operatorname{Out}(F_n)$ as its automorphism group
+        if and only if it is bi-interpretable with the augmented Cayley graph of $\operatorname{Out}(F_n)$.
     - dates: 2024 – 2025
       title: Geometric group theory and mapping class groups
       detail: Final year project · Supervised by Prof. Robert Tang, XJTLU
