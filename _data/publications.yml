@@ -1,17 +1,7 @@
 # Newest first. Names matching `author` in _config.yml are bolded automatically.
 - year: 2026
-  title: Your paper title goes here
-  authors: [Your Name, Coauthor Name, Coauthor Name]
-  venue: Conference or Journal · Forthcoming
+  title: Packing edge-colorings of subcubic outerplanar graphs
+  authors: [Sijin Li, Yifan Li, Xujun Liu]
+  venue: Discrete Applied Mathematics 391(15), 68–82
   links:
-    - { label: Paper, url: "#" }
-    - { label: Code, url: "#" }
-    - { label: BibTeX, url: "#" }
-
-- year: 2025
-  title: Another publication or working paper
-  authors: [Coauthor Name, Your Name]
-  venue: Workshop, Journal, or Preprint
-  links:
-    - { label: Paper, url: "#" }
-    - { label: Project, url: "#" }
+    - { label: DOI, url: "https://doi.org/10.1016/j.dam.2026.04.033" }

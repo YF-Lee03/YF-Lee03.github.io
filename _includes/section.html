@@ -1,0 +1,20 @@
+{%- assign group = include.group -%}
+<section class="section" id="{{ group.id }}" aria-labelledby="{{ group.id }}-heading">
+  <h2 id="{{ group.id }}-heading">{{ group.section | escape }}</h2>
+  <ol class="timeline{% if group.compact %} timeline--compact{% endif %}">
+    {%- for item in group.items %}
+    <li>
+      <time>{{ item.dates }}</time>
+      <div>
+        <h3>{{ item.title }}</h3>
+        {%- if item.detail %}
+        <p>{{ item.detail }}</p>
+        {%- endif %}
+        {%- if item.summary %}
+        <p class="summary">{{ item.summary }}</p>
+        {%- endif %}
+      </div>
+    </li>
+    {%- endfor %}
+  </ol>
+</section>

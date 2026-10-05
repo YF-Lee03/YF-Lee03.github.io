@@ -2,47 +2,65 @@
 layout: default
 ---
     <section class="home">
-      <div class="home-intro">
-        <p class="eyebrow">Academic homepage</p>
-        <h1>{{ site.author }}</h1>
-        <p class="title-line">Student at <a href="https://www.maths.ox.ac.uk/">University of Oxford</a></p>
-        <p class="lede">My research explores <em>your primary field</em>, with a particular interest in <em>your focused research question</em> and its real-world implications.</p>
-        <div class="home-actions">
-          <a class="arrow-link" href="{{ '/research/' | relative_url }}">View research <span aria-hidden="true">→</span></a>
-          <a class="arrow-link" href="{{ '/cv/' | relative_url }}">Curriculum vitae <span aria-hidden="true">→</span></a>
-        </div>
+      <h1>{{ site.author }}</h1>
+      <p class="title-line">MSc in Mathematics and Foundations of Computer Science, <a href="https://www.maths.ox.ac.uk/">University of Oxford</a></p>
+      <p class="lede">I am interested in <em>geometric group theory</em>. My MSc dissertation, supervised by Prof. Dawid Kielak, studied the model theory of curve graphs and its analogue for Out(<i>F<sub>n</sub></i>).</p>
+      <div class="home-actions">
+        <a class="arrow-link" href="mailto:{{ site.email }}">Email <span aria-hidden="true">↗</span></a>
       </div>
-
-      <aside class="portrait-wrap">
-        <div class="portrait-placeholder" role="img" aria-label="Portrait placeholder">YN</div>
-        <p>Replace with your portrait</p>
-      </aside>
     </section>
 
-    <section class="home-details" aria-label="Academic summary">
+    {% comment %} At-a-glance band, hidden for now. Remove this comment wrapper to show it again.
+    <section class="home-details" aria-label="At a glance">
       <div>
         <p class="mini-label">Interests</p>
         <ul class="plain-list">
-          <li>Your research topic</li>
-          <li>Your methodology</li>
-          <li>Your application area</li>
+          <li>Geometric group theory</li>
+          <li>Mapping class groups</li>
+          <li>Out(<i>F<sub>n</sub></i>)</li>
+          <li>Spaces of nonpositive curvature</li>
+          <li>Low-dimensional topology</li>
         </ul>
       </div>
       <div>
-        <p class="mini-label">Currently</p>
-        <p>Working on a project about <strong>your current research question</strong> and welcoming conversations with researchers in adjacent fields.</p>
+        <p class="mini-label">Reading groups this term</p>
+        <ul class="plain-list">
+          <li>Bridson &amp; Haefliger, <em>Metric Spaces of Non-Positive Curvature</em></li>
+          <li>Serre, <em>Trees</em></li>
+          <li>Martelli, <em>An Introduction to Geometric Topology</em></li>
+        </ul>
       </div>
       <div>
         <p class="mini-label">Latest</p>
-        <p><time datetime="2026-09">September 2026</time><br>Academic homepage launched.</p>
+        <p><time datetime="2026">2026</time><br><strong>Packing edge-colorings of subcubic outerplanar graphs</strong> published in <em>Discrete Applied Mathematics</em>.</p>
       </div>
     </section>
+    {% endcomment %}
 
-    <section class="home-note">
-      <span class="note-mark" aria-hidden="true">∗</span>
-      <div>
-        <h2>A short introduction</h2>
-        <p>I am interested in careful questions, transparent methods, and research that remains connected to the world beyond the page. This paragraph can become a concise personal statement: where you are, what you study, and what motivates your work.</p>
-        <a class="arrow-link" href="{{ '/contact/' | relative_url }}">Contact me <span aria-hidden="true">↗</span></a>
-      </div>
+    <section class="section" id="publications" aria-labelledby="publications-heading">
+      <h2 id="publications-heading">Publications</h2>
+      <ol class="entry-list">
+        {%- for pub in site.data.publications %}
+        <li class="entry">
+          <span class="entry-year">{{ pub.year }}</span>
+          <article>
+            <h3>{{ pub.title }}</h3>
+            <p>{% for name in pub.authors %}{% if name == site.author %}<strong>{{ name }}</strong>{% else %}{{ name }}{% endif %}{% unless forloop.last %}, {% endunless %}{% endfor %}</p>
+            <p class="venue">{{ pub.venue }}</p>
+            {%- if pub.links %}
+            <div class="entry-links">{% for link in pub.links %}<a href="{{ link.url }}">{{ link.label }}</a>{% endfor %}</div>
+            {%- endif %}
+          </article>
+        </li>
+        {%- endfor %}
+      </ol>
+    </section>
+
+    {%- for group in site.data.cv %}
+    {% include section.html group=group %}
+    {%- endfor %}
+
+    <section class="section" id="contact" aria-labelledby="contact-heading">
+      <h2 id="contact-heading">Contact</h2>
+      <p><a href="mailto:{{ site.email }}">{{ site.email }}</a></p>
     </section>

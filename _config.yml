@@ -1,8 +1,9 @@
-# Site-wide settings. Change `author` once and it updates the homepage,
-# footer, and the bolded name in the publication list.
-title: Y. Li
-author: Your Name
-description: Academic homepage — research, publications, curriculum vitae, and contact.
+# Site-wide settings. `author` appears in the footer and is bolded
+# automatically in publication author lists.
+title: Yifan Li
+author: Yifan Li
+description: Yifan Li — geometric group theory. MSc in Mathematics and Foundations of Computer Science, University of Oxford.
+email: yifan.lee.2003@outlook.com
 lang: en
 
 exclude:
