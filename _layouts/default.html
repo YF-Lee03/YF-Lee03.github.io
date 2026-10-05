@@ -21,11 +21,23 @@
   <link rel="preload" href="{{ '/assets/fonts/hanken-grotesk-normal-latin.woff2' | relative_url }}" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="{{ '/assets/fonts/fonts.css' | relative_url }}">
   <link rel="stylesheet" href="{{ '/assets/katex/katex.min.css' | relative_url }}">
-  <link rel="stylesheet" href="{{ '/styles.css' | relative_url }}">
+  <link rel="stylesheet" href="{{ '/styles.css' | relative_url }}?v={{ site.time | date: '%s' }}">
   <link rel="icon" href="{{ '/assets/favicon.svg' | relative_url }}" type="image/svg+xml">
   <script src="{{ '/assets/katex/katex.min.js' | relative_url }}" defer></script>
   <script src="{{ '/assets/katex/auto-render.min.js' | relative_url }}" defer></script>
-  <script src="{{ '/script.js' | relative_url }}" defer></script>
+  <script src="{{ '/script.js' | relative_url }}?v={{ site.time | date: '%s' }}" defer></script>
+  <script>
+    // Render inline $...$ math once the deferred KaTeX scripts have run. This lives in the
+    // page itself so a cached older script.js can never leave the math unrendered.
+    document.addEventListener("DOMContentLoaded", function () {
+      if (window.renderMathInElement) {
+        renderMathInElement(document.body, {
+          delimiters: [{ left: "$", right: "$", display: false }],
+          throwOnError: false
+        });
+      }
+    });
+  </script>
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>

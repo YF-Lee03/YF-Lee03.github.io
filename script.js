@@ -11,11 +11,5 @@ themeToggle?.addEventListener("click", () => {
   try { localStorage.setItem("theme", nextTheme); } catch (e) {}
 });
 
-// Render inline $...$ math with the self-hosted KaTeX loaded before this file.
-window.renderMathInElement?.(document.body, {
-  delimiters: [{ left: "$", right: "$", display: false }],
-  throwOnError: false,
-});
-
 const year = document.querySelector("#year");
 if (year) year.textContent = new Date().getFullYear();
