@@ -14,24 +14,21 @@
       summary: >-
         Studied rigidity phenomena linking mapping class groups, $\operatorname{Out}(\pi_1(\Sigma))$,
         and $\operatorname{Aut}(\mathscr{C}(\Sigma))$, from both topological and
-        model-theoretic viewpoints. Extended the approach to $\operatorname{Out}(F_n)$: a geometric
-        graph built from embedded spheres has $\operatorname{Out}(F_n)$ as its automorphism group
-        if and only if it is bi-interpretable with the augmented Cayley graph of $\operatorname{Out}(F_n)$.
+        model-theoretic viewpoints. Extended the approach to $\operatorname{Out}(F_n)$.
       # url: /assets/dissertation.pdf
-    - dates: 2024 – 2025
+    - dates: 2024 - 2025
       title: Geometric group theory and mapping class groups
       detail: Final year project · Supervised by Prof. Robert Tang, XJTLU
       summary: >-
-        Foundations of geometric group theory and mapping class groups, focusing on Gromov
-        hyperbolicity of curve graphs and acylindrical hyperbolicity of mapping class groups.
+        Foundations of geometric group theory and mapping class groups, with Gromov
+        hyperbolicity of curve graphs.
       # url: /assets/final-year-project.pdf
     - dates: "2024"
       title: Packing edge-colorings of subcubic outerplanar graphs
       detail: Research project with Sijin Li and Xujun Liu
       summary: >-
         Proved packing edge-coloring results for subcubic outerplanar graphs, towards a conjecture
-        of Hocquard et al., using minimal-counterexample and structural arguments, and established
-        sharpness examples for several generalized packing-coloring parameters. Published in
+        of Hocquard et al., and established counterexamples for several packing-coloring parameters. Published in
         <em>Discrete Applied Mathematics</em> (2026).
       url: "https://doi.org/10.1016/j.dam.2026.04.033"
 
